@@ -1,0 +1,418 @@
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+body {
+    background: #222;
+}
+
+.card {
+    width: 90%;
+    max-width: 470px;
+    background: linear-gradient(135deg, #00feba, #5b548a);
+    color: #fff;
+    border-radius: 20px;
+    padding: 40px 35px;
+    margin: 100px auto;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: background 1s ease;
+}
+
+/* --- Dynamic Card Themes (Based on Temp & Condition) --- */
+.card.bg-freezing {
+    background: linear-gradient(135deg, #000428, #004e92);
+    /* Deep icy blue */
+}
+
+.card.bg-cold-rain {
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    /* Dark moody rain */
+}
+
+.card.bg-cold {
+    background: linear-gradient(135deg, #1c92d2, #f2fcfe);
+    /* Frosty light blue */
+}
+
+.card.bg-chilly-rain {
+    background: linear-gradient(135deg, #4b79a1, #283e51);
+    /* Desaturated chilly wet */
+}
+
+.card.bg-chilly {
+    background: linear-gradient(135deg, #74ebd5, #9face6);
+    /* Fresh crisp morning */
+}
+
+.card.bg-pleasant {
+    background: linear-gradient(135deg, #56ab2f, #a8e063);
+    /* Pleasant nature green */
+}
+
+.card.bg-warm-clear {
+    background: linear-gradient(135deg, #FFB75E, #ED8F03);
+    /* Sunny warm orange */
+}
+
+.card.bg-warm {
+    background: linear-gradient(135deg, #ff9966, #ff5e62);
+    /* Warm coral */
+}
+
+.card.bg-scorching {
+    background: linear-gradient(135deg, #cb2d3e, #ef473f);
+    /* Intense blazing red */
+}
+
+/* Sunny Weather Animation */
+.bg-sunny {
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 150px;
+    height: 150px;
+    background: rgba(255, 230, 0, 0.4);
+    border-radius: 50%;
+    box-shadow: 0 0 100px 50px rgba(255, 230, 0, 0.3);
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.card.clear .bg-sunny {
+    opacity: 1;
+    animation: moveSun 20s linear infinite alternate;
+}
+
+@keyframes moveSun {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        transform: translate(300px, 100px) scale(1.2);
+    }
+}
+
+/* Rainy Weather Animation */
+.bg-rainy {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 1s ease;
+    background-image:
+        linear-gradient(transparent, rgba(255, 255, 255, 0.5) 20%, transparent 40%),
+        linear-gradient(transparent, rgba(255, 255, 255, 0.2) 20%, transparent 40%),
+        linear-gradient(transparent, rgba(255, 255, 255, 0.6) 20%, transparent 40%),
+        linear-gradient(transparent, rgba(255, 255, 255, 0.2) 20%, transparent 40%),
+        linear-gradient(transparent, rgba(255, 255, 255, 0.4) 20%, transparent 40%),
+        linear-gradient(transparent, rgba(255, 255, 255, 0.1) 20%, transparent 40%);
+    background-size:
+        2px 300px,
+        1px 200px,
+        2px 350px,
+        1px 180px,
+        2px 280px,
+        1px 220px;
+    background-repeat: repeat-y;
+}
+
+.card.rain .bg-rainy,
+.card.drizzle .bg-rainy {
+    opacity: 1;
+    animation: rainEffect 0.6s linear infinite;
+}
+
+@keyframes rainEffect {
+    0% {
+        background-position:
+            15% 50px,
+            30% 10px,
+            45% 100px,
+            65% 5px,
+            80% 80px,
+            95% 30px;
+    }
+
+    100% {
+        background-position:
+            15% 350px,
+            30% 210px,
+            45% 450px,
+            65% 185px,
+            80% 360px,
+            95% 250px;
+    }
+}
+
+/* Snowy Weather Animation */
+.bg-snowy {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 1s ease;
+    background-image:
+        radial-gradient(circle, white 2px, transparent 3px),
+        radial-gradient(circle, white 1.5px, transparent 2.5px),
+        radial-gradient(circle, white 2.5px, transparent 3.5px),
+        radial-gradient(circle, white 1px, transparent 2px),
+        radial-gradient(circle, white 3px, transparent 4px);
+    background-size:
+        150px 150px,
+        180px 180px,
+        250px 250px,
+        130px 130px,
+        200px 200px;
+    background-position:
+        0 0,
+        40px 60px,
+        130px 20px,
+        70px 100px,
+        100px 40px;
+}
+
+.card.snow .bg-snowy {
+    opacity: 1;
+    animation: snowEffect 4s linear infinite;
+}
+
+@keyframes snowEffect {
+    0% {
+        background-position:
+            0 0,
+            40px 60px,
+            130px 20px,
+            70px 100px,
+            100px 40px;
+    }
+
+    100% {
+        background-position:
+            30px 150px,
+            10px 240px,
+            160px 270px,
+            90px 230px,
+            120px 240px;
+    }
+}
+
+/* Cloudy Weather Animation */
+.bg-cloudy {
+    position: absolute;
+    top: 20px;
+    left: -100px;
+    width: 200px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50px;
+    filter: blur(15px);
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.card.clouds .bg-cloudy,
+.card.mist .bg-cloudy {
+    opacity: 1;
+    animation: moveClouds 20s linear infinite alternate;
+}
+
+@keyframes moveClouds {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(450px);
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.unit-toggle {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.unit-toggle:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.search {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.search input {
+    border: 0;
+    outline: 0;
+    background: #ebfffc;
+    color: #555;
+    padding: 10px 25px;
+    height: 60px;
+    border-radius: 30px;
+    margin-right: 16px;
+    flex: 1;
+    font-size: 18px;
+}
+
+.search button {
+    border: 0;
+    outline: 0;
+    background: #ebfffc;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.search button img {
+    width: 20px;
+    height: 20px;
+}
+
+.weather {
+    display: none;
+}
+
+.date {
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 15px;
+    opacity: 0.85;
+}
+
+.weather-icon {
+    width: 170px;
+    margin-top: 10px;
+}
+
+.weather h1 {
+    font-size: 80px;
+    font-weight: 500;
+}
+
+.weather h2 {
+    font-size: 45px;
+    font-weight: 400;
+    margin-top: -10px;
+}
+
+.weather h3 {
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 5px;
+    opacity: 0.8;
+}
+
+.suggestion {
+    font-size: 20px;
+    font-weight: 300;
+    margin-top: 15px;
+    line-height: 1.5;
+    opacity: 0.85;
+}
+
+.details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 40px;
+    padding: 15px 20px;
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+}
+
+.col {
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.col img {
+    width: 40px;
+    margin-right: 10px;
+}
+
+.humidity,
+.wind {
+    font-size: 28px;
+    margin-top: -6px;
+}
+
+/* Forecast Section */
+.forecast {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+}
+
+.forecast-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    flex: 1;
+}
+
+.forecast-day {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.forecast-icon {
+    width: 45px;
+    margin: 8px 0;
+}
+
+.forecast-temp {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.error {
+    text-align: left;
+    margin-left: 10px;
+    font-size: 14px;
+    margin-top: 10px;
+    display: none;
+}
