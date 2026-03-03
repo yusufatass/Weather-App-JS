@@ -1,7 +1,7 @@
 # Dynamic Weather App
 
 [![Render Deploy](https://img.shields.io/badge/Render-Deployed-success?style=for-the-badge&logo=render)](https://weather-app-71z8.onrender.com)
-🎯 **[Canlı Demoyu İnceleyin (Live Demo) Oynamak İçin Tıklayınız](https://weather-app-71z8.onrender.com)**
+🎯 **[Canlı Demoyu İncelemek İçin Tıklayınız](https://weather-app-71z8.onrender.com)**
 
 Bu proje, anlık hava durumu ve 3 günlük tahminleri gösteren, arayüzü tamamen hava koşullarına (güneşli, karlı, yağmurlu vb.) göre dinamik olarak değişen modern bir hava durumu uygulamasıdır.
 
