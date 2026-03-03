@@ -1,5 +1,5 @@
-// OpenWeatherMap API anahtarı ve istek yapılacak ana URL
-const apiKey = "4bb378c80a276499ea2f384ddb1a6774";
+// OpenWeatherMap API anahtarı (Gizliliğini korumak için config.js dosyasından çekiliyor)
+const apiKey = config.MY_API_TOKEN;
 const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
 
 // DOM Elemanlarını seçme

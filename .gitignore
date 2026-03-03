@@ -15,3 +15,7 @@ Thumbs.db
 *.njsproj
 *.sln
 *.sw?
+
+# Security
+js/config.js
+
