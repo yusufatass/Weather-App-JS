@@ -416,3 +416,80 @@ body {
     margin-top: 10px;
     display: none;
 }
+
+/* ================================= */
+/*       Mobile Responsiveness       */
+/* ================================= */
+@media (max-width: 480px) {
+    .card {
+        width: 95%;
+        padding: 25px 20px;
+        margin: 40px auto;
+        border-radius: 15px;
+    }
+
+    .weather-icon {
+        width: 130px;
+    }
+
+    .weather h1 {
+        font-size: 60px;
+    }
+
+    .weather h2 {
+        font-size: 35px;
+    }
+
+    .weather h3 {
+        font-size: 18px;
+    }
+
+    .suggestion {
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+    .details {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+        padding: 15px;
+        margin-top: 25px;
+    }
+
+    .col img {
+        width: 30px;
+    }
+
+    .humidity,
+    .wind {
+        font-size: 22px;
+    }
+
+    .forecast {
+        padding: 10px;
+        margin-top: 15px;
+    }
+
+    .forecast-icon {
+        width: 35px;
+    }
+
+    .forecast-temp {
+        font-size: 16px;
+    }
+
+    .forecast-day {
+        font-size: 14px;
+    }
+
+    .search input {
+        height: 50px;
+        font-size: 16px;
+    }
+
+    .search button {
+        width: 50px;
+        height: 50px;
+    }
+}
