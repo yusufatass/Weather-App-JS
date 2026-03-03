@@ -1,5 +1,8 @@
 # Dynamic Weather App
 
+[![Render Deploy](https://img.shields.io/badge/Render-Deployed-success?style=for-the-badge&logo=render)](https://weather-app-71z8.onrender.com)
+🎯 **[Canlı Demoyu İnceleyin (Live Demo) Oynamak İçin Tıklayınız](https://weather-app-71z8.onrender.com)**
+
 Bu proje, anlık hava durumu ve 3 günlük tahminleri gösteren, arayüzü tamamen hava koşullarına (güneşli, karlı, yağmurlu vb.) göre dinamik olarak değişen modern bir hava durumu uygulamasıdır.
 
 ## Özellikler (Features)
@@ -48,6 +51,7 @@ Uygulama, hava durumuna göre dinamik olarak renk ve içerik değiştirmektedir.
 
 
 ## Teknolojiler
-- HTML5 & CSS3 (Glassmorphism, CSS Animations, Keyframes)
-- Vanilla / ES6 JavaScript (Async/Await, Fetch API, DOM Manipulation)
-- [OpenWeatherMap API](https://openweathermap.org/) (Hava durumu ve 3 Günlük Forecast)
+- **Frontend:** HTML5 & CSS3 (Glassmorphism, CSS Animations, Keyframes)
+- **Scripting:** Vanilla / ES6 JavaScript (Async/Await, Fetch API, DOM Manipulation)
+- **API:** [OpenWeatherMap API](https://openweathermap.org/) (Real-time weather & 3-Day Forecast)
+- **Deployment:** [Render](https://render.com/) (Static Site Hosting & Continuous Deployment)
