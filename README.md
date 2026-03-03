@@ -23,7 +23,7 @@ Bu proje, anlık hava durumu ve 3 günlük tahminleri gösteren, arayüzü tamam
 ## Nasıl Çalıştırılır?
 Projeyi bilgisayarınıza klonlayın ve herhangi bir kod düzenleyicide (örn: VS Code) açtıktan sonra doğrudan `index.html` dosyasına çift tıklayın veya bir Live Server aracılığıyla tarayıcıda görüntüleyin. Herhangi bir ekstra kurulum (npm, webpack) gerektirmez. Vanilla JavaScript ve saf CSS kullanılmıştır.
 
-## 📸 Screenshots (Ekran Görüntüleri)
+## 📸 Screenshots
 
 Uygulama, hava durumuna göre dinamik olarak renk ve içerik değiştirmektedir. Aşağıda farklı senaryolara ait arayüz örneklerini görebilirsiniz:
 
@@ -46,10 +46,6 @@ Uygulama, hava durumuna göre dinamik olarak renk ve içerik değiştirmektedir.
   <i>Şehir arama ve temel hava durumu bilgilerinin genel görünümü.</i>
 </p>
 
-### 📱 Responsive Design (Mobil Görünüm)
-<p align="center">
-  <img src="images/screenshots/mobile-view.png" width="300" alt="Mobile View">
-</p>
 
 ## Teknolojiler
 - HTML5 & CSS3 (Glassmorphism, CSS Animations, Keyframes)
